@@ -19,6 +19,8 @@ int main(int argc, char* argv[])
 {
 	registerTestlibCmd(argc, argv);
 	long long ans_ched = ouf.readInt(0,2147483647,"Answer not in [0,2147483647].");	
+	ouf.readEoln();
+	ouf.readEof();
 	long long in_A = inf.readInt();
 	inf.readSpace();
 	long long in_B = inf.readInt();
