@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+\graphicspath{{images/}}
+
+\pagestyle{fancy}
+\lhead{國立宜蘭高中 111 學年度資訊學科能力競賽 - 測機}
+
+\begin{document}
+
+\begin{center}
+\section*{A. Simple Task}
+\end{center}
+
+\section*{Description}
+
+這是一題非常簡單的測試題，輸入只有兩個數字 $A$ 和 $B$。
+請輸出兩個數字相加的結果。
+$$
+	A + B
+$$
+
+\section*{Input}
+
+第一行包含兩個整數 $A, B$，代表欲相加的兩個數。
+
+各變數範圍限制如下：
+\begin{itemize}
+	\item $-2\times 10^9 \le A, B \le 2\times 10^9$ 
+\end{itemize}
+
+\section*{Output}
+
+請輸出一個整數，代表 $A + B$ 的值。
+
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+1 1 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+2 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+123456 -1 \\ 
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+123455 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+0 0 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+0 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline\hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 10\% & $B = 0$ \\
+ \hline
+ 2 & 70\% & $-10^9 \le A, B \le 10^9$ \\
+ \hline
+ 3 & 20\% & 無額外限制 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Hint}
+請注意 \texttt{int} 的使用範圍。
+
+\end{document}
