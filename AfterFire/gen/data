@@ -1,0 +1,66 @@
+@subtask samples
+manual sample1.in
+manual 02.in
+manual 03.in
+
+@subtask subtask1
+manual 1_time.in
+gen 1 84 1 1 2
+gen 1 99 1 1 2
+gen 1 834 1 1 2
+gen 1 9229 1 1 2
+gen 1 82392 1 1 2
+gen 1 29041 1 1 2
+gen 1 283912 1 1 2
+gen 1 931092 1 1 2
+gen 1 728589 1 1 2
+
+
+@subtask subtask2
+manual 2_time.in
+gen 1 299 1 1 2
+gen 5 300 1 1 2
+gen 2 297 1 1 2
+gen 3 278 1 1 2
+gen 4 253 1 1 2
+gen 2 289 1 1 2
+gen 2 293 1 1 2
+gen 3 250 1 1 2
+
+@subtask subtask3
+@include subtask2
+manual 3_time.in
+gen 5 278 1 84271 2
+gen 2 222 1 88 2
+gen 3 264 1 78191 2
+gen 4 234 1 89513 2
+gen 3 228 1 31859 2
+gen 2 217 1 814 2
+
+
+@subtask subtask4
+@include subtask3
+manual 4_time.in
+gen 2 834 1 918 2
+gen 2 741 2 853 2
+gen 3 671 1 748 2
+gen 2 918 4 9812 2
+gen 4 718 3 8287 2
+gen 3 981 2 9847 2
+gen 4 812 1 9174 2
+gen 2 734 1 8749 2
+
+
+@subtask subtask5
+@include samples
+@include subtask3
+@include subtask4
+manual 5_time.in
+gen 2 838194 1 91847 3
+gen 2 749501 2 85309 3
+gen 3 981271 1 74814 3
+gen 2 993118 4 98124 3
+gen 4 711838 3 82878 3
+gen 3 988131 2 98472 3
+gen 4 819512 1 91743 3
+gen 2 731814 1 187491 3

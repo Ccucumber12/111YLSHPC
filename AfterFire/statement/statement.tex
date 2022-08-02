@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+
+\pagestyle{fancy}
+\lhead{國立宜蘭高中 111 學年度資訊學科能力競賽}
+
+\begin{document}
+
+\begin{center}
+\section*{C. 火的後續-四方位染疫}
+\end{center}
+
+\section*{Description}
+
+傳說中在宜中七大不可思議中，有一個「火」的故事，在傳說中，有一位學長獨自坐在電腦教室寫著有關廣度優先搜尋算法的題目，題目內容是一個有關於火災範圍預測的簡單題目，
+但那位學長寫了一天、一星期、一個月$\cdots$最後在那位學長畢業時，仍然沒能寫出來，他灰心喪志，最後獨自一人在電腦教室$\cdots\cdots$
+
+聽完這個故事的你準備跟學長一起挑戰看看過去傳說的題目，但是突然接到學校通知，疫情在學校爆發了，學校想要進行對疫情的預測並把控好接下來教室每天的剩餘健康人數。
+
+已知教室內有$N$排$M$列的座位，並有$K$位在第一天就已經確診的學生，而他們分別使用位於教室內座標$(x_1, y_1), (x_2, y_2)... (x_K, y_K)$的桌椅。
+
+科學家發現這種疾病的擴散方式很特別，每天都會從d所有已經確診學生的位置向上、下、左、右四個方向擴散一個座位的長度，
+由於紙本匯報太慢了，於是學校希望有人能幫忙設計出能夠預測從現在開始到全班確診這段時間內每天剩餘健康人數的程式。 
+
+原本你打算請學長去幫忙，但轉頭一看發現學長已經開始在寫「火」了，所以你決定扛起這個任務，為防疫盡一份心力。
+
+	
+\section*{Input}
+
+第一行為兩個正整數 $N, M$，代表教室內桌椅總共有$N$排$M$列。
+
+第二行為一個正整數$K$，代表第一天教室內已經有$K$位學生確診。 
+
+接下來$K$行，每行有兩個整數$x_i,y_i$，為第一天已經確診的同學所使用的桌椅位置。
+
+各變數範圍如下：
+\begin{itemize}
+    \item $1 \le N \times M \le 10^6$
+    \item $1 \le K \le N \times M$
+    \item $1 \le x_i \leq N$
+    \item $1 \le y_i \leq M$
+\end{itemize}\
+
+\section*{Output}
+
+請輸出一個遞減數列代表從第一天開始到全班確診之間每天的剩餘健康人數。
+
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+2 3\\
+1\\
+1 2\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+5 2 0\\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+1 5\\
+2\\
+1 2\\
+1 4\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+3 0\\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+3 3\\
+1\\
+2 2\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+8 4 0\\
+} \\
+\hline
+\end{longtable}
+
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline
+ \hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 13\% & $M =  1 , K = 1 $ \\
+ \hline 
+ 2 & 25\% & $N, M \le  300, K = 1$ \\
+ \hline
+ 3 & 22\% & $N, M \le  300$ \\
+ \hline
+ 4 & 29\% & $N, M \le 1000$ \\
+ \hline
+ 5 & 11\% & 無額外限制 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\end{document}
