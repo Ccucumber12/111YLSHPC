@@ -1,0 +1,37 @@
+# executables
+*.class
+*.dll
+*.exe
+*.out
+
+# testdatas
+/*/sandbox
+/*/tests
+/*/logs
+
+# LaTeX
+*.aux
+*.log
+*.gz
+
+# OS generated file
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.DS_Store
+
+# python
+/*/__pycache__
+*.py[cod]
+
+# vim
+*.swp
+
+# some weird files
+/*/.vscode
+*.vscode
+.vscode/*
