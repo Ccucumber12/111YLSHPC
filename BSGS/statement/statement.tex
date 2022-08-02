@@ -43,7 +43,7 @@
 \begin{document}
 
 \begin{center}
-\section*{D. BSGS-數學天才的難關}
+\section*{D. 數學天才的難關}
 \end{center}
 
 \section*{Description}
@@ -62,7 +62,10 @@ $$
 
 \section*{同餘方程式說明}
 
-同餘$:$當兩個整數$x, y$除以同一個正整數$m$，若得相同餘數，則稱二整數$x, y$對於模數$m$同餘
+同餘$:$當兩個整數$x, y$除以同一個正整數$m$，若得相同餘數，則稱二整數$x, y$對於模數$m$同餘，記為
+$$
+	x \equiv y \pmod m
+$$
 
 同餘方程式，顧名思義就是餘數相同的方程式，以下列方程式舉例，
 此方程式的含意就是利用$2$對$3, 5$取餘數的結果相同($3\%2 = 5 \% 2 = 1$)\\
@@ -119,6 +122,7 @@ $$
 \hline
 \end{longtable}
 
+\newpage
 \section*{Sample 2}
 \begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
 \hline
@@ -179,7 +183,7 @@ $$
 
 \section*{Hint}
 
-Sample3的實際做法如下:
+Sample3的實際做法如下：
 
 已知$a = 7 ,b = 4 ,p = 17 , m =\sqrt p = 4.1231\cdots$,向上取整可得$m = 5$，接著我們枚舉$j$的範圍並記錄$4 \times 7^{j} \pmod{17}$的答案，
 並且枚舉$i$並計算$7^ {5 \times i} \pmod {17}$的結果。
