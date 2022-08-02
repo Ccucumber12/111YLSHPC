@@ -1,0 +1,160 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+
+\pagestyle{fancy}
+\lhead{111 學年度宜蘭高中校內資訊學科能力競賽}
+
+\begin{document}
+
+\begin{center}
+\section*{A. 成績批改}
+\end{center}
+
+\section*{Description}
+
+據說，幾乎是在「考試」這個制度誕生的遙遠過去，「調分」這個概念早早就緊隨其後出現了，究竟是學生的實力不及還是老師的考卷出得太難，
+這個世紀之謎到現在依舊還沒有正確的解答，這同時也成為所有老師的教育難題之一，要讓學生們滿意，究竟要如何調分，方法那是五花八門，
+「線性調分」、「開根號乘十」，這些都是我們現在常聽到的幾種調分的方式，可以說各種調分方式都是老師們智慧的結晶，以台灣最常見的考試制度來說滿分為 $100$ 分，最低分為 $0$ 分，
+不管怎麼調分，這都是不可撼動的上下界線。
+
+回到現代，你是班上的數學小老師，你前往辦公室打算向數學老師拿班上的成績單，只是你發現數學老師早就坐在位置上與一疊厚厚的考卷戰鬥，
+你是一個盡責的小老師，早就看出老師在調分了，於是你向老師詢問了調分方法後從厚厚的考卷堆裡拿走了 $N$ 份考卷，打算幫數學老師調分讓他早早去接他已經放學的小孩了。
+
+調分方式很簡單，只需要把所有原始成績都加上 $C$ 分就好了，只不過需要注意，如果一名學生的原始成績加了 $C$ 分之後超過了 $100$ 分的話，根據不可撼動的考試制度，他的成績會被調整成剛好 $100$ 分。
+	
+\section*{Input}
+
+第一行為兩個正整數 $N, C$，代表有幾 $N$ 份需要調分的考卷而每份考卷都需要向上調整 $C$ 分。
+
+第二行為 $N$ 個正整數 $a_1 , a_2 \cdots a_N$，代表 $N$ 份考卷的原始成績。 
+
+各變數範圍如下：
+\begin{itemize}
+    \item $1 \le N \le 1000$
+    \item $1 \le C \le 100$
+    \item $0 \le a_i \leq 100$
+\end{itemize}\
+
+\section*{Output}
+
+請輸出 $N$ 個正整數，代表每份考卷調分後的分數。
+
+\newpage
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+1 10\\
+80\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+90\\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+5 10\\
+10 30 50 70 90\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+20 40 60 80 100\\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+5 20\\
+11 33 55 77 99\\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+31 53 75 97 100\\
+} \\
+\hline
+\end{longtable}
+
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline
+ \hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 11\% & $N =  1,\ \max(a_i) + C \le 100 $ \\
+ \hline 
+ 2 & 31\% & $N = 1$ \\
+ \hline
+ 3 & 31\% & $\max(a_i) + C \le 100$ \\
+ \hline
+ 4 & 27\% & 無額外限制 \\
+ \hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

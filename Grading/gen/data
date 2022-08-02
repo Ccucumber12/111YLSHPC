@@ -1,0 +1,47 @@
+@subtask samples
+manual sample1.in
+manual sample2.in
+manual sample3.in
+
+@subtask s1
+gen 1 50 50 1
+gen 1 33 67 1
+gen 1 73 27 1
+gen 1 100 0 1
+gen 1 1 99 1
+gen 1 1 99 10000
+gen 1 77 23 10000
+
+@subtask s2
+@include s1
+gen 1 77 100 10
+gen 1 88 100 10
+gen 1 99 100 10
+gen 1 100 100 1
+gen 1 100 100 100
+gen 1 84 27 10000
+gen 1 98 97 10000
+gen 1 2 99 10000
+
+@subtask s3
+@include s1
+gen 1000 50 50 1
+gen 1000 33 67 1
+gen 1000 73 27 1
+gen 1000 100 0 1
+gen 1000 1 99 1
+gen 1000 1 99 100
+gen 1000 77 23 100
+
+@subtask s4
+@include samples
+@include s2
+@include s3
+gen 1000 77 100 10
+gen 1000 88 100 10
+gen 1000 99 100 10
+gen 1000 100 100 1
+gen 1000 100 100 100
+gen 1000 84 27 100
+gen 1000 98 97 100
+gen 1000 2 99 100
