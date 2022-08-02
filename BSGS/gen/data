@@ -26,7 +26,6 @@ gen 3 8110 12 852 2
 
 @subtask subtask3
 @include subtask2
-manual 3_time.in
 gen 5 978193035 4 9942 2
 gen 2 822753298 9 9343 2
 gen 3 664831917 1 9881 2
@@ -41,6 +40,8 @@ gen 4 841021341 8 9028 2
 
 @subtask subtask4
 @include subtask3
+manual 3_time.in
+manual 4_time.in
 gen 1 834109815 1 918471728 2
 gen 1 741838139 2 853091475 2
 gen 3 471487891 1 748148971 2
