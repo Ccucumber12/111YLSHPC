@@ -2,15 +2,14 @@
 manual sample1.in
 manual sample2.in
 manual sample3.in 
-manual sample4.in 
 
 @subtask s1
 gen 4 0
 gen 8 0
+gen 9 0
 gen 10 0
 
 @subtask s2
-@include s1
 gen 4 1
 gen 9 1
 gen 10 1 ylsh
@@ -39,8 +38,23 @@ gen 5 8 suc
 gen 5 10 
 
 @subtask s5
-@include s2
+@include s3
 @include s4
+manual sub5_sp1.in
+gen 8 2
+gen 8 5
+gen 8 6
+gen 8 7
+gen 8 8
+gen 8 9
+gen 8 10 Ccvcumber12
+gen 8 10 Ccucumber12
+gen 8 10 Ccucvmber12
+
+@subtask s6
+@include samples
+@include s5
+manual sub6_sp1.in
 gen 10 2
 gen 10 5
 gen 10 6
@@ -49,16 +63,4 @@ gen 10 8
 gen 10 9
 gen 10 10 Ccvcumber12
 gen 10 10 Ccucumber12
-gen 10 10 Ccucvmber12
-
-@subtask s6
-@include samples
-@include s5
-gen 11 10
-gen 12 10
-gen 13 10
-gen 14 10
-gen 15 10 boku
-gen 15 10 aiyo
-gen 15 10 ggggg
-gen 15 10 kudate
+gen 10 10 Ccucvmber11

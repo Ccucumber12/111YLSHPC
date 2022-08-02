@@ -15,31 +15,31 @@
 		},
 		"s2": {
 			"index": 2,
-			"score": 6,
+			"score": 7,
 			"text": "N <= 10, M = 1", 
 			"validators": [""]
 		},
 		"s3": {
 			"index": 3,
-			"score": 6,
+			"score": 7,
 			"text": "N <= 2", 
 			"validators": [""]
 		},
 		"s4": {
 			"index": 4,
-			"score": 17,
+			"score": 18,
 			"text": "N <= 5", 
 			"validators": [""]
 		},
 		"s5": {
 			"index": 5,
-			"score": 24,
-			"text": "N <= 10", 
+			"score": 36,
+			"text": "N <= 8", 
 			"validators": [""]
 		},
 		"s6": {
 			"index": 6,
-			"score": 46,
+			"score": 31,
 			"text": "none", 
 			"validators": [""]
 		}

@@ -3,7 +3,7 @@
 	"code": "Combinatorics",
 	"title": "庭院深深深幾許",
 	"memory_limit": 512,
-	"time_limit": 2.0,
+	"time_limit": 0.5,
 	"type": "Batch",
 	"description": "",
 	"has_grader": false,

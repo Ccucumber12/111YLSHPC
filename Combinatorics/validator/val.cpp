@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 15 ;
+const int N = 10 ;
 const int M = 10 ;
 
 int main() {
