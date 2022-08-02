@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+\graphicspath{{images/}}
+
+\pagestyle{fancy}
+\lhead{國立宜蘭高中 111 學年度資訊學科能力競賽 - 測機}
+
+\begin{document}
+
+\begin{center}
+\section*{C. Hard Task}
+\end{center}
+
+\section*{Description}
+
+這是一題非常困難的測試題，你會拿到一個數字 $K$，請構造三個介於 $[-10^9, 10^9]$ 範圍內的整數 $a, b, c$ 使得他們的和恰好為 $K$。
+$$
+	a + b + c = K
+$$
+
+\section*{Input}
+
+第一行包含一個整數 $K$，代表欲構造的數字和。 
+
+各變數範圍限制如下：
+\begin{itemize}
+	\item $-10^9 \le K \le 10^9$
+\end{itemize}
+
+\section*{Output}
+
+請輸出三個整數，使得他們的和恰好為 $K$。
+若有多組解，請輸出任何一組。
+
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+6 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+1 2 3 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+3 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+1 1 1 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+0 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+-1 0 1 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline\hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 33\% & $K$ 是 $3$ 的倍數 \\
+ \hline
+ 3 & 67\% & 無額外限制 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Hint}
+對於任何成立的 $a, b, c$，皆可以拿到分數。
+
+\end{document}
