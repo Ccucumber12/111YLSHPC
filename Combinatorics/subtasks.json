@@ -1,0 +1,48 @@
+{
+	"global_validators": ["val.cpp"],
+	"subtasks": {
+		"samples": {
+			"index": 0,
+			"score": 0,
+			"text": "sample", 
+			"validators": [""]
+		},
+		"s1": {
+			"index": 1,
+			"score": 1,
+			"text": "N <= 10, M = 0", 
+			"validators": [""]
+		},
+		"s2": {
+			"index": 2,
+			"score": 6,
+			"text": "N <= 10, M = 1", 
+			"validators": [""]
+		},
+		"s3": {
+			"index": 3,
+			"score": 6,
+			"text": "N <= 2", 
+			"validators": [""]
+		},
+		"s4": {
+			"index": 4,
+			"score": 17,
+			"text": "N <= 5", 
+			"validators": [""]
+		},
+		"s5": {
+			"index": 5,
+			"score": 24,
+			"text": "N <= 10", 
+			"validators": [""]
+		},
+		"s6": {
+			"index": 6,
+			"score": 46,
+			"text": "none", 
+			"validators": [""]
+		}
+	}
+}
+

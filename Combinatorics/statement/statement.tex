@@ -1,0 +1,257 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+
+\pagestyle{fancy}
+\lhead{國立宜蘭高中 111 學年度資訊學科能力競賽}
+
+\begin{document}
+
+\begin{center}
+\section*{D. 庭院深深深幾許}
+\end{center}
+
+\section*{Description}
+
+庭院深深深幾許，楊柳堆煙，簾幕無重數。玉勒雕鞍遊冶處，樓高不見章臺路。
+
+雨橫風狂三月暮，門掩黃昏，無計留春住。淚眼問花花不語，亂紅飛過鞦韆去。
+
+\vspace{1cm}
+又到了學習排列組合的季節，數學課堂裡的哀號聲從懷山樓飄洋過海傳到臨風樓。
+只見老師賣力地在黑板上揮灑汗水，講台下的學生卻顯意興闌珊。
+比起算出深深深能有多少排列，他們似乎更想知道能打到多少牌位。
+
+不過就這樣擺爛也不是辦法。
+要知道，若沒有全副武裝邁向考場，試卷上的數字只會無情地留下傷痕，最終落入永劫不復的暑修地獄。
+好在小晨及早意識到了事態嚴重，發現不得不立刻動手採取行動。
+費盡千辛萬苦，翻越千山萬水，小晨終於得手可能會出的考題清單。
+然而書到用時方恨少，卷非閱過不知難。
+小晨一看心底涼了一半，滿滿的排列組合題目。
+取到考題又如何，依然不會如未得。
+
+走投無路的小晨找上你，請你幫他解決這些排列組合的題目，幫助他度過這個難關。
+每一道題目都在詢問 $N$ 個人共有幾種排列數量，然而狡猾的憲文豈會就這樣輕易放過宜中的新新學子們。
+這 $N$ 個人依序編號為 $1, 2, \cdots N$ ，必須符合憲文制定的 $M$ 條規則。
+規則總共有以下三種：
+\begin{enumerate}
+	\item $A$ 跟 $B$ 相鄰
+	\item $A$ 跟 $B$ 不相鄰
+	\item $A$ 在 $B$ 前面
+\end{enumerate}
+請你幫小晨計算出在符合這 $M$ 條規則的前提下，$N$ 個人共有有多少種排列數量。
+兩個排列不同若且唯若存在任何一人在兩個排列中處於不同的位置上。
+
+
+\section*{Input}
+
+第一行為兩個正整數 $N, M$，代表排列人數和規則數量。
+
+接下來 $M$ 行，每行有若干個整數，代表一條規則：
+\begin{itemize}
+  \item 規則一：$1\ A\ B$，代表 $A$ 跟 $B$ 相鄰
+  \item 規則二：$2\ A\ B$，代表 $A$ 跟 $B$ 不相鄰
+  \item 規則三：$3\ A\ B$，代表 $A$ 在 $B$ 前面
+\end{itemize}
+
+\newpage
+各變數範圍限制如下：
+\begin{itemize}
+    \item $1 \le N \le 15$
+    \item $0 \le M \le 10$
+    \item $1 \le A, B \le N$
+    \item $A \neq B$
+    \item 保證答案數量小於 $10^7$
+\end{itemize}
+
+\section*{Output}
+
+請輸出一個整數代表符合所有規則的排列數量。
+
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+5 5 \\
+1 1 2 \\ 
+1 1 3 \\ 
+2 2 3 \\
+3 2 3 \\
+3 3 4 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+3 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+6 6 \\
+1 3 4 \\
+1 4 5 \\
+2 3 5 \\
+3 1 2 \\
+3 3 1 \\
+3 4 2 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+8 \\
+} \\
+\hline
+\end{longtable}
+
+\newpage
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+15 10 \\
+1 15 1 \\
+1 4 14 \\
+2 7 4 \\
+3 2 8 \\
+1 4 2 \\
+2 8 1 \\
+2 9 2 \\
+1 15 14 \\
+1 2 3 \\
+2 15 7 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+3265920 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 4}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+15 10 \\
+1 3 5 \\
+1 3 7 \\
+1 4 8 \\
+1 10 11 \\
+2 5 7 \\
+2 5 8 \\
+3 1 4 \\
+3 4 7 \\
+3 7 3 \\
+3 3 1 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+0 \\
+} \\
+\hline
+\end{longtable}
+
+\newpage
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline\hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 1\% & $N \le 10,\ M = 0$ \\
+ \hline
+ 2 & 6\% & $N \le 10,\ M = 1$ \\
+ \hline
+ 3 & 6\% & $N \le 2$ \\
+ \hline
+ 4 & 17\% & $N \le 5$ \\
+ \hline
+ 5 & 24\% & $N \le 10$ \\
+ \hline
+ 6 & 46\% & 無額外限制 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Hint}
+範例測資一的三種排列如下：
+\begin{itemize}
+	\item $5\ 2\ 1\ 3\ 4$
+	\item $2\ 1\ 3\ 5\ 4$
+	\item $2\ 1\ 3\ 4\ 5$
+\end{itemize}
+
+範例測資二的八種排列如下：
+\begin{itemize}
+	\item $3\ 4\ 5\ 1\ 2\ 6$
+	\item $3\ 4\ 5\ 1\ 6\ 2$
+	\item $3\ 4\ 5\ 6\ 1\ 2$
+	\item $5\ 4\ 3\ 1\ 2\ 6$
+	\item $5\ 4\ 3\ 1\ 6\ 2$
+	\item $5\ 4\ 3\ 6\ 1\ 2$
+	\item $6\ 3\ 4\ 5\ 1\ 2$
+	\item $6\ 5\ 4\ 3\ 1\ 2$
+\end{itemize}
+
+\end{document}
