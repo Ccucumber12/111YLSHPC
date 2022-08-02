@@ -2,31 +2,31 @@
 	"global_validators": ["val.cpp"],
 	"subtasks": {
 		"samples": {
-			"index": 0,
+			"index": 1,
 			"score": 0
 		},
 		"subtask1": {
-			"index": 1,
+			"index": 2,
 			"score": 13,
 			"validators": ["subtask1.cpp"]
 		},
 		"subtask2": {
-			"index": 2,
+			"index": 3,
 			"score": 25,
 			"validators": ["subtask2.cpp"]
 		},
 		"subtask3": {
-			"index": 3,
+			"index": 4,
 			"score": 22,
 			"validators": ["subtask3.cpp"]
 		},
 		"subtask4": {
-			"index": 4,
+			"index": 5,
 			"score": 29,
 			"validators": ["subtask4.cpp"]
 		},
 		"subtask5": {
-			"index": 5,
+			"index": 6,
 			"score": 11
 		}
 	}
