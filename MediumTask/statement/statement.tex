@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{hyperref}
+	\lstdefinestyle{C}{
+   		language=C, 
+   		basicstyle=\ttfamily\bfseries,
+    	numbers=left, 
+    	numbersep=5pt,
+    	tabsize=4,
+    	frame=single,
+   	 	commentstyle=\itshape\color{brown},
+    	keywordstyle=\bfseries\color{blue},
+   	 	deletekeywords={define},
+    	morekeywords={NULL,bool}
+	}	
+
+\setCJKmainfont{Noto Sans Mono CJK TC}
+ 
+\voffset -20pt
+\textwidth 410pt
+\textheight 650pt
+\oddsidemargin 20pt
+\newcommand{\XOR}{\otimes}
+\linespread{1.2}\selectfont
+\graphicspath{{images/}}
+
+\pagestyle{fancy}
+\lhead{國立宜蘭高中 111 學年度資訊學科能力競賽 - 測機}
+
+\begin{document}
+
+\begin{center}
+\section*{B. Medium Task}
+\end{center}
+
+\section*{Description}
+
+這是一題非常中等的測試題，你會拿到 $N$ 個數字，請計算這 $N$ 個數字的和。
+$$
+	a_1 + a_2 + \cdots + a_n = \sum_{i=1}^n a_i
+$$
+
+\section*{Input}
+
+第一行包含一個正整數 $N$，代表欲相加的數字數量。 
+
+第二行包含 $N$ 個整數 $a_i$，代表要相加的數字。
+
+各變數範圍限制如下：
+\begin{itemize}
+	\item $1 \le N \le 10^6$ 
+	\item $-10^9 \le a_i \le 10^9$ 
+\end{itemize}
+
+\section*{Output}
+
+請輸出一個整數，代表 $N$ 個數字的和。
+
+\section*{Sample 1}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 1
+{ \tt
+% input
+2 \\ 
+11 22 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+33 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{Sample 2}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 2
+{ \tt
+% input
+5 \\
+1 2 3 4 5 \\ 
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+15 \\
+} \\
+\hline
+\end{longtable}
+
+\newpage
+\section*{Sample 3}
+\begin{longtable}[!h]{|p{0.5\textwidth}|p{0.5\textwidth}|}
+\hline
+\textbf {Input}	& \textbf {Output} \\
+\hline
+\parbox[t]{0.5\textwidth} % sample 3
+{ \tt
+% input
+1 \\
+0 \\
+} &
+\parbox[t]{0.5\textwidth}
+{ \tt
+%output
+0 \\
+} \\
+\hline
+\end{longtable}
+
+\section*{配分}
+
+在一個子任務的「測試資料範圍」的敘述中，如果存在沒有提到範圍的變數，則此變數的範圍為 Input 所描述的範圍。
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+ 子任務編號 & 子任務配分 & 測試資料範圍 \\  
+ \hline\hline
+ 0 & 0\% & 範例測資 \\ 
+ \hline
+ 1 & 15\% & $N = 2$ \\
+ \hline
+ 2 & 60\% & $N \le 10^5$ \\
+ \hline
+ 3 & 25\% & 無額外限制 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section*{Hint}
+本題測試資料量大，建議使用 \tt{scanf} 進行輸入。
+若使用 \tt{std::cin} 輸入，請在 \tt{main} 函式第一行加上 \tt{ios\_base::sync\_with\_stdio(0);} \tt{cin.tie(0);}，且請勿跟 \tt{scanf} 混用，以免造成 Time Limit Exceeded。
+
+\end{document}

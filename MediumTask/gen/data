@@ -1,0 +1,24 @@
+@subtask samples
+manual sample1.in
+manual sample2.in
+manual sample3.in
+
+@subtask s1
+gen 2 10 1
+gen 2 1000000000 1
+gen 2 1000000000 1000
+gen 2 1000000000 -1000
+
+@subtask s2
+@include s1
+gen 100000 10 1
+gen 100000 1000000000 1
+gen 100000 1000000000 1000
+gen 100000 1000000000 -1000
+
+@subtask s3
+@include s2
+gen 5000000 10 1
+gen 5000000 1000000000 1
+gen 5000000 1000000000 1000
+gen 5000000 1000000000 -1000
